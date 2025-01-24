@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/icon-top.png" type="image/x-icon" />
+    <!-- fonts files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css files -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Bookmark</title>
+  </head>
+
+  <body>
+    <div class="container-fluid overflow-hidden">
+      <h1 class="text-center my-5 mx-auto position-relative">Bookmarker</h1>
+      <div class="information">
+        <h2 class="text-center pt-4">
+          <i class="fa-solid fa-bookmark px-2"></i>
+          Bookmark your favorite site
+          <i class="fa-solid fa-bookmark px-2"></i>
+        </h2>
+        <div class="the-form w-100 mx-0">
+          <form>
+            <div class="my-3">
+              <i class="fa-solid fa-book-bookmark pe-2 fs-5"></i>
+              <label for="name" class="h4"> Site Name</label>
+              <input
+                oninput="nameValidation()"
+                id="name"
+                class="name-input w-100 rounded form-control color"
+                type="text"
+                placeholder="Bookmark Name"
+              />
+            </div>
+            <div class="my-3">
+              <i class="fa-solid fa-link pe-2 fs-5"></i>
+              <label for="link" class="h4">Site URL</label>
+              <input
+                oninput="linkValidation()"
+                id="link"
+                class="url-input w-100 rounded form-control color"
+                type="url"
+                placeholder="Website URL"
+              />
+            </div>
+            <div class="text-center my-3">
+              <button
+                onclick=" addIteams()"
+                type="button"
+                class="text-white theade mt-1 py-1 px-3 rounded color position-relative"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+          <div class="message visually-hidden position-absolute" id="mesg">
+            <div class="squar p-1">
+              <div
+                class="d-flex align-items-center justify-content-between pb-2"
+              >
+                <div class="circle"></div>
+                <i
+                  onclick="closeBox()"
+                  class="fa-solid fa-xmark border border-danger p-1 rounded-3 fa-sm"
+                ></i>
+              </div>
+              <p class="prag text-decoration-underline">
+                Site Name or Url is not valid, Please follow the rules below :
+              </p>
+              <p class="s-prag">
+                <i class="fa-regular fa-circle-right p-2 text-danger"></i>
+                Site name must contain at least 3 characters
+              </p>
+              <p class="s-prag">
+                <i class="fa-regular fa-circle-right p-2 text-danger"></i>
+                Site URL must be a valid one
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="the-tabel mt-4">
+        <table class="table text-center">
+          <thead class="theade">
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
