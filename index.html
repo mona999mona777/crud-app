@@ -11,35 +11,30 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
       rel="stylesheet"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
       rel="stylesheet"
     />
-
     <!-- css files -->
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Bookmark</title>
   </head>
-
   <body>
     <div class="container-fluid overflow-hidden">
       <h1 class="text-center my-5 mx-auto position-relative">Bookmarker</h1>
@@ -57,7 +52,7 @@
               <input
                 oninput="nameValidation()"
                 id="name"
-                class="name-input w-100 rounded form-control color"
+                class="name-input w-100 rounded form-control"
                 type="text"
                 placeholder="Bookmark Name"
               />
@@ -68,18 +63,28 @@
               <input
                 oninput="linkValidation()"
                 id="link"
-                class="url-input w-100 rounded form-control color"
+                class="url-input w-100 rounded form-control"
                 type="url"
                 placeholder="Website URL"
               />
             </div>
             <div class="text-center my-3">
               <button
+                id="add"
                 onclick=" addIteams()"
                 type="button"
-                class="text-white theade mt-1 py-1 px-3 rounded color position-relative"
+                class="text-white theade mt-1 py-1 px-3 rounded position-relative"
               >
-                Submit
+                Add
+              </button>
+              <button
+                id="update"
+                onclick=" updateData()"
+                type="button"
+                class="d-none theade mt-1 py-1 px-3 rounded the-button position-relative"
+              >
+                <i class="fa-regular fa-pen-to-square mx-1"></i>
+                Update
               </button>
             </div>
           </form>
@@ -110,12 +115,15 @@
         </div>
       </div>
       <div class="the-tabel mt-4">
-        <table class="table text-center">
+        <table
+          class="table text-center border border-secondary overflow-hidden"
+        >
           <thead class="theade">
             <tr>
               <th>Index</th>
               <th>Website Name</th>
-              <th>Visit</th>
+              <th>Visit Link</th>
+              <th>Update</th>
               <th>Delete</th>
             </tr>
           </thead>
